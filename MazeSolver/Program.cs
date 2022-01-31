@@ -14,8 +14,15 @@ namespace MazeSolver
     {
         static void Main(string[] args)
         {
+            /*
+            Developer Notes
+            Choose between the 3 mazes 
+            Chose the type of Algorithm you want the program to solve (QueueFrontier or StackFrontier)
+            */
+
+
             string MazePath = Properties.Resources.maze2;
-            Start.StartMaze(MazePath);
+            Start.StartMaze(MazePath, AlgorithmType.QueueFrontier);
             
         }
     }
