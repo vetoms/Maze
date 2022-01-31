@@ -6,9 +6,9 @@ using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
-using AI.TheMaze;
+using MazeSolver.TheMaze;
 
-namespace AI
+namespace MazeSolver
 {
     public class Program
     {
