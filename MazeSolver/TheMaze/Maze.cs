@@ -8,6 +8,11 @@ using System.Text;
 
 namespace MazeSolver.TheMaze
 {
+    public enum AlgorithmType
+    {
+        QueueFrontier,
+        StackFrontier
+    }
     class Maze
     {
         public int height;
@@ -19,6 +24,7 @@ namespace MazeSolver.TheMaze
         public (int, int) goal;
         public int num_explored;
         public List<(int, int)> explored;
+               
 
         public Maze(string fileName)
         {            
@@ -154,7 +160,9 @@ namespace MazeSolver.TheMaze
 
             return result;
         }
-        public void solve(string Type)
+
+      
+        public void solve(AlgorithmType algorithmType)
         {
             List<string> actions;
             List<(int, int)> cells;
@@ -163,7 +171,7 @@ namespace MazeSolver.TheMaze
             explored = new List<(int, int)>();
             Node newNode = new Node(start, "NONE", null);
             var frontier = new StackFrontier();
-            if (Type == "QueueFrontier")
+            if (algorithmType == AlgorithmType.QueueFrontier)
             {
                 frontier = new QueueFrontier();
             }

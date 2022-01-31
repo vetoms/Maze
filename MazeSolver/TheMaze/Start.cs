@@ -13,12 +13,12 @@ namespace MazeSolver.TheMaze
 
             Console.WriteLine("Maze:");
             M.print();
-            M.solve("QueueFrontier");
+            M.solve(AlgorithmType.QueueFrontier);
             Console.WriteLine();
             Console.WriteLine("States Explored: " + M.num_explored);
             Console.WriteLine("Solution:");
             M.print();
-            M.output_image(sPath + @"\Test.png");
+            M.output_image(sPath + @"\MazeSolved.png");
             Console.ReadLine();
         }
     }

@@ -16,6 +16,7 @@ namespace MazeSolver
         {
             string MazePath = Properties.Resources.maze2;
             Start.StartMaze(MazePath);
+            
         }
     }
 }
