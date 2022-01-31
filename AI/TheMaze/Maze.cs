@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace AI.TheMaze
@@ -20,17 +21,19 @@ namespace AI.TheMaze
         public List<(int, int)> explored;
 
         public Maze(string fileName)
-        {
-            string text = System.IO.File.ReadAllText(fileName);
-            if (!text.Contains("A"))
+        {            
+            if (!fileName.Contains("A"))
             {
                 throw new System.Exception("maze must have exactly one start point");
             }
-            if (!text.Contains("B"))
+            if (!fileName.Contains("B"))
             {
                 throw new System.Exception("maze must have exactly one goal");
             }
-            string[] lines = File.ReadAllLines(fileName);
+            string[] lines = fileName.Split(new[] { '\r', '\n' });//File.ReadAllLines(fileName);
+
+            lines = lines.Where( x => !string.IsNullOrEmpty(x)).ToArray();
+
 
             height = lines.Length;
             int max = 0;

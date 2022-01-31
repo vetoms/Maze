@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
@@ -12,7 +14,7 @@ namespace AI
     {
         static void Main(string[] args)
         {
-            string MazePath = "/MazeExamples/maze2.txt";
+            string MazePath = Properties.Resources.maze2;
             Start.StartMaze(MazePath);
         }
     }

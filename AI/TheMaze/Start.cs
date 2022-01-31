@@ -9,8 +9,7 @@ namespace AI.TheMaze
         public static void StartMaze(string MazePath)
         {
             string sPath = AppDomain.CurrentDomain.BaseDirectory;
-            string file = sPath + MazePath;
-            Maze M = new Maze(file);
+            Maze M = new Maze(MazePath);
 
             Console.WriteLine("Maze:");
             M.print();
