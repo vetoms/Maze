@@ -34,7 +34,6 @@ namespace AI.TheMaze
 
             lines = lines.Where( x => !string.IsNullOrEmpty(x)).ToArray();
 
-
             height = lines.Length;
             int max = 0;
             foreach (string line in lines)
@@ -113,15 +112,9 @@ namespace AI.TheMaze
                         Console.Write("");
                     }
                     else if (solution != null && solution.Contains((i, j)))
-                    {
-                        //foreach(var s in solution)
-                        //{
-                        //    if(s.Item2 == (i, j))
-                        //    {
+                    {                        
                         Console.Write("*");
-                        Console.Write("");
-                        //    }
-                        //}                       
+                        Console.Write("");                
                     }
                     else
                     {
